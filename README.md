@@ -1,4 +1,4 @@
 todolist
 ========
 
-A Todo list made with php laravel
+A TODO List using [Laravel](http://laravel.com) PHP Framework
