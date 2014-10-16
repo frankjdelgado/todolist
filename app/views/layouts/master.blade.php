@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{$title='asd'}}</title>
 
-    <!-- Bootstrap -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+	<!-- CSS Files -->
+	@section('css')
+	    <!-- Bootstrap -->
+	    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+	    <!-- Main -->
+    
+    	<!-- Custom -->
+    @show
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,10 +23,19 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
-	<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ipsa molestiae, tenetur quibusdam eveniet sint ducimus voluptatem blanditiis reiciendis dolore tempora, obcaecati deleniti soluta, magnam earum voluptate fuga. Saepe, voluptatum.</p>
-    <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     
+	<!-- Custom Content -->
+	@yield('content')
+
+	<!-- JS Files -->
+	@section('js')
+		<!-- JQuery -->
+	    <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+	    <!-- Bootstrap -->
+	    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+	    <!-- Main -->
+    
+    	<!-- Custom -->
+    @show
   </body>
 </html>
