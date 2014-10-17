@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{$title='asd'}}</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300,300italic' rel='stylesheet' type='text/css'>
 
 	<!-- CSS Files -->
 	@section('css')
