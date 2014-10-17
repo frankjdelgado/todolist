@@ -12,9 +12,10 @@
 	    <!-- Bootstrap -->
 	    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 	    <!-- Main -->
+      <link rel="stylesheet" href="{{asset('css/main.css')}}">
     
     	<!-- Custom -->
-    @show
+  @show
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,6 +26,9 @@
   </head>
   <body>
     
+  <h1>Titulo</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quibusdam cupiditate dicta, quaerat optio asperiores est, odio, nulla veniam saepe ex deserunt, dolorem adipisci! Rerum consequatur neque laudantium nulla doloremque.</p>
+  <a href="">Link to</a>
 	<!-- Custom Content -->
 	@yield('content')
 
@@ -37,6 +41,6 @@
 	    <!-- Main -->
     
     	<!-- Custom -->
-    @show
+  @show
   </body>
 </html>
