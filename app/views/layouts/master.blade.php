@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{$title='asd'}}</title>
+    <title>{{ $title or '' }}</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
 	<!-- CSS Files -->
 	@section('css')
 	    <!-- Bootstrap -->
 	    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 	    <!-- Main -->
+      <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
       <link rel="stylesheet" href="{{asset('css/main.css')}}">
     
     	<!-- Custom -->
@@ -26,11 +28,8 @@
   </head>
   <body>
     
-  <h1>Titulo</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quibusdam cupiditate dicta, quaerat optio asperiores est, odio, nulla veniam saepe ex deserunt, dolorem adipisci! Rerum consequatur neque laudantium nulla doloremque.</p>
-  <a href="">Link to</a>
 	<!-- Custom Content -->
-	@yield('content')
+	 @yield('content')
 
 	<!-- JS Files -->
 	@section('js')

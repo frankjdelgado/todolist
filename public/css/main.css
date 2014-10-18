@@ -3,3 +3,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#title {
+  font-family: 'Indie Flower', cursive;
+  color: #eb5c60;
+}
+#title h1, #title h2, #title h3, #title h4, #title h5, #title h6 {
+  margin: 0;
+}

@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/','HomeController@showWelcome');
 
-Route::get('test','HomeController@test');
+Route::resource('tasks','TasksController');
+
+Route::resource('users','UsersController');

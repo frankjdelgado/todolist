@@ -1,0 +1,103 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?c1g82r');
+	src:url('../fonts/icomoon.eot?#iefixc1g82r') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?c1g82r') format('woff'),
+		url('../fonts/icomoon.ttf?c1g82r') format('truetype'),
+		url('../fonts/icomoon.svg?c1g82r#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+	content: "\e600";
+}
+.icon-mail:before {
+	content: "\e601";
+}
+.icon-share:before {
+	content: "\e602";
+}
+.icon-chat:before {
+	content: "\e603";
+}
+.icon-search:before {
+	content: "\e604";
+}
+.icon-link:before {
+	content: "\e605";
+}
+.icon-cog:before {
+	content: "\e606";
+}
+.icon-new:before {
+	content: "\e607";
+}
+.icon-graduation:before {
+	content: "\e608";
+}
+.icon-microphone:before {
+	content: "\e609";
+}
+.icon-plus:before {
+	content: "\e60a";
+}
+.icon-info:before {
+	content: "\e60b";
+}
+.icon-warning:before {
+	content: "\e60c";
+}
+.icon-list:before {
+	content: "\e60d";
+}
+.icon-trash:before {
+	content: "\e60e";
+}
+.icon-play:before {
+	content: "\e60f";
+}
+.icon-pause:before {
+	content: "\e610";
+}
+.icon-record:before {
+	content: "\e611";
+}
+.icon-stop:before {
+	content: "\e612";
+}
+.icon-arrow-left:before {
+	content: "\e613";
+}
+.icon-arrow-down:before {
+	content: "\e614";
+}
+.icon-arrow-up:before {
+	content: "\e615";
+}
+.icon-arrow-right:before {
+	content: "\e616";
+}
+.icon-cc:before {
+	content: "\e617";
+}
+.icon-evernote:before {
+	content: "\e618";
+}
+.icon-paypal:before {
+	content: "\e619";
+}
