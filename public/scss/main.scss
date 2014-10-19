@@ -2,17 +2,145 @@
 
 body {
 	font-family: $font-body;
+	font-size:14px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-#title{
-	font-family: $font-title;
+// Helpers
+
+.img-responsive{
+	display:inline-block;
+}
+// Colors
+.text-red{
 	color:$red;
-	&:hover{
-		
+}
+.text-dark-red{
+	color:darken($red,5%);
+}
+.text-grey{
+	color:$grey;
+}
+.text-dark-grey{
+	color:$dark-grey;
+}
+
+// Buttons
+.btn-todo-red{
+	border:1px solid $red;
+	border-radius: 0px;
+	background-color:$red;
+	color:$white;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.navbar-todo{
+	border-bottom-color: $red;
+	border-bottom-width: 2px;
+	.navbar-brand {
+		font-family: $font-title;
+		color:$red;
+		font-size: 35px;
+		padding: 20px 15px;
+		line-height: 35px;
+		height:70px;
+		&:hover{
+			color:darken($red,10%);
+		}
 	}
-	h1,h2,h3,h4,h5,h6{
-		margin: 0;
+	.navbar-toggle{
+		margin-top: 16px;
+		margin-bottom:16px;
+		font-size:25px;
+		background-color:$red;
+		color:$white;
+		padding:5px;
+		border-radius:50%;
+		border-color: $red;
+		&:hover,&:focus{
+			background-color:darken($red,10%);
+		}
+	}
+	.navbar-nav{
+		li{
+			a{
+				padding-top: 25px;
+				padding-bottom: 25px;
+				color: $black;
+				text-transform: uppercase;
+				font-size: 12px;
+				font-weight: 500;
+				&:hover,&:focus{
+					color:darken($red,10%);
+				}
+			}
+		}
+		.dropdown-menu{
+			li{
+				a{
+					padding: 3px 20px;
+				}
+			}
+		}
+	}
+}
+
+.footer-separator{
+	padding-top:73px;
+}
+footer{
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	height:73px;
+	padding:20px 0;
+	background-color:$black;
+	font-size: 12px;
+	letter-spacing: 1px;
+	li>*{
+		vertical-align: middle;
+	}
+	a{
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		color:$white;
+		&:hover{
+			color:$red;
+			text-decoration: none;
+			span{
+				color:$white;
+			}
+			span.icon-uniE61A{
+				color:$red;
+			}
+		}
+		span{
+			-webkit-transition: all 0.3s ease;
+			-moz-transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+			-o-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			color:$red;
+		}
+		span.icon-uniE61A{
+			-webkit-transition: all 0.3s ease;
+			-moz-transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+			-o-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			color:$white;
+			position:relative;
+			top: 4px;
+			margin-left: 5px;
+			font-size: 20px;
+		}
 	}
 }

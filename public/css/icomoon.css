@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-uniE61A:before {
+	content: "\e61a";
+}
 .icon-clock:before {
 	content: "\e600";
 }

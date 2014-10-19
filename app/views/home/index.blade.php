@@ -1,34 +1,23 @@
 @extends('layouts.master')
+@section('css')
+  <link rel="stylesheet" href="{{asset('css/home.css')}}">
+@stop
 @section('content')
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" id="title" href="#"><h2>TODO</h2></a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="invitation">
+        <h2>Write it down</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam molestias reprehenderit error ipsum vero. Obcaecati magnam illum quis porro similique eum expedita, voluptates hic cupiditate harum, sed est, ex alias!</p>
+        <div class="text-right">
+          <a href="" class="btn btn-lg btn-todo-red text-uppercase">sign me up!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <img class="img-responsive" src="{{asset('img/checklist.png')}}" alt="">
+    </div>
+  </div>
+</div>
 @stop
