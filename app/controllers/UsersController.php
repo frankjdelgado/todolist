@@ -45,8 +45,11 @@ class UsersController extends \BaseController {
 		$validator = Validator::make(Input::all(),$rules);
 
 		if ($validator->fails()) {
-			return Redirect::route('users.create')->withErrors($validator);
+			return Redirect::route('users.create')->withErrors($validator)->withInput();
 		}else{
+
+			/*Via Mass Asignment
+			$user = new User(Input::all());*/
 
 			$user = new User;
 			$user->username = current(explode("@", Input::get('email')));
@@ -57,6 +60,7 @@ class UsersController extends \BaseController {
 				$user->save();
 				return Redirect::route('tasks.index');
 			} catch (Exception $e) {
+				// return $e->getMessage();
 				return Redirect::route('users.create')->withErrors($e->getMessage());
 			}			
 		}

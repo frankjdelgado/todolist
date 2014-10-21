@@ -8,12 +8,18 @@
     <div class="col-xs-12 col-md-offset-4 col-md-4">
       {{ Form::open(array('route' => 'users.store', 'role'=>'form', 'class' => 'form-todo')) }}
         <div class="form-group">
-          {{ Form::label('email', 'email', array('class' => 'text-uppercase')) }}
+          {{ Form::label('email', 'email', array('class' => 'text-uppercase')) }}        
           {{ Form::email('email', $value = null, $attributes = array('autofocus')) }}
+          @if($errors->has('email'))
+            <span class="text-red">{{$errors->first('email')}}</span>
+          @endif
         </div>
         <div class="form-group">
           {{ Form::label('password', 'password', array('class' => 'text-uppercase')) }}
           {{ Form::password('password', $attributes = array('autofocus')) }}
+          @if($errors->has('password'))
+            <span class="text-red">{{$errors->first('password')}}</span>
+          @endif
         </div>
         <div class="form-group">
           {{ Form::label('password_confirmation', 'Confirmation', array('class' => 'text-uppercase')) }}
@@ -23,9 +29,6 @@
           {{ Form::submit('Submit',$attributes = array('class'=>'btn btn-todo-red')) }}
         </div>
       {{ Form::close() }}
-    </div>
-    <div class="col-xs-12">
-      {{Auth::user()}}
     </div>
   </div>
 </div>
