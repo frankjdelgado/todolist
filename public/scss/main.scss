@@ -6,6 +6,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+a:focus{
+	outline:none;
+}
 
 // Helpers
 
@@ -39,6 +42,7 @@ body {
 	transition: all 0.3s ease;
 }
 
+// Todo Globals
 .navbar-todo{
 	border-bottom-color: $red;
 	border-bottom-width: 2px;
@@ -142,5 +146,50 @@ footer{
 			margin-left: 5px;
 			font-size: 20px;
 		}
+	}
+}
+.form-todo{
+	label{
+		color:$grey;
+		font-weight: 500;
+		font-size: 13px;
+	}
+	input[type='email'],input[type='password']{
+		display:block;
+		width:100%;
+		border:0px;
+		border-bottom: 2px solid $grey;
+		padding:8px 25px 8px 0px;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		&:focus{
+			outline:none;
+			border-color:$red;
+			+ .form-icon{
+				color:$red;
+			}
+		}
+	}
+	.form-group{
+		margin-bottom: 30px;
+		position:relative;
+		.form-icon{
+			position:absolute;
+			top: 35px;
+			right: 0px;
+			z-index: 2;
+			display: block;
+			font-size: 16px;
+			color: $grey;
+		}
+	}
+	.btn{
+		@media (max-width: 992px) {
+	    	display:block;
+	    	width:100%;
+	  	}
 	}
 }

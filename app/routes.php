@@ -15,4 +15,15 @@ Route::get('/','HomeController@showWelcome');
 
 Route::resource('tasks','TasksController');
 
-Route::resource('users','UsersController');
+/**
+ * Rutas por nombre de funcion
+ * -- metodoNombre. getIndex, postStore, putEdit
+ */
+Route::controller(
+		'users',
+		'UsersController',
+		array(
+	        'getCreate'   => 'users.create',
+	        'postStore'   => 'users.store',
+	    )
+	);

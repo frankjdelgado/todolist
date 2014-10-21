@@ -23,6 +23,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+
+	/**
+	 * Asignacion masiva:
+	 * -- whitelist de atributos para asignacion masiva. Crear o Actualizar
+	 */	
+	protected $fillable = array('password','email');
+
 	/**
 	 * Relaciones:
 	 * -- en plural si de vuelve muchos objetos

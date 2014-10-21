@@ -4,6 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a:focus {
+  outline: none;
+}
 .img-responsive {
   display: inline-block;
 }
@@ -125,4 +128,47 @@ footer a span.icon-uniE61A {
   top: 4px;
   margin-left: 5px;
   font-size: 20px;
+}
+.form-todo label {
+  color: #58595b;
+  font-weight: 500;
+  font-size: 13px;
+}
+.form-todo input[type='email'], .form-todo input[type='password'] {
+  display: block;
+  width: 100%;
+  border: 0px;
+  border-bottom: 2px solid #58595b;
+  padding: 8px 25px 8px 0px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.form-todo input[type='email']:focus, .form-todo input[type='password']:focus {
+  outline: none;
+  border-color: #eb5c60;
+}
+.form-todo input[type='email']:focus + .form-icon, .form-todo input[type='password']:focus + .form-icon {
+  color: #eb5c60;
+}
+.form-todo .form-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+.form-todo .form-group .form-icon {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  z-index: 2;
+  display: block;
+  font-size: 16px;
+  color: #58595b;
+}
+@media (max-width: 992px) {
+  .form-todo .btn {
+    display: block;
+    width: 100%;
+  }
 }

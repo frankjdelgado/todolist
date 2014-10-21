@@ -2,6 +2,7 @@
 
 class UsersController extends \BaseController {
 
+	protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 * GET /users
@@ -19,9 +20,11 @@ class UsersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getCreate()
 	{
 		//
+		$this->layout->title = 'Sign up';
+		$this->layout->content = View::make('user.create');
 	}
 
 	/**
@@ -30,9 +33,34 @@ class UsersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function postStore()
 	{
 		//
+
+		$rules =  array(
+		        	'email' => 'required|email|unique:users',
+		        	'password' => 'required|min:6|confirmed',
+		    	  );
+
+		$validator = Validator::make(Input::all(),$rules);
+
+		if ($validator->fails()) {
+			return Redirect::route('users.create')->withErrors($validator);
+		}else{
+
+			$user = new User;
+			$user->username = current(explode("@", Input::get('email')));
+			$user->email = Input::get('email');
+			$user->password = Hash::make(Input::get('password'));
+
+			try {
+				$user->save();
+				return Redirect::route('tasks.index');
+			} catch (Exception $e) {
+				return Redirect::route('users.create')->withErrors($e->getMessage());
+			}			
+		}
+
 	}
 
 	/**
