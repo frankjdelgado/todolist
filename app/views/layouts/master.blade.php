@@ -24,8 +24,8 @@
   </head>
   <body>
   @include('shared.header')
-
-	<!-- Custom Content -->
+  @include('shared.messages')	
+  <!-- Custom Content -->
 	@yield('content')
 
   <div class="footer-separator"></div>

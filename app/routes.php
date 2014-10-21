@@ -18,12 +18,17 @@ Route::resource('tasks','TasksController');
 /**
  * Rutas por nombre de funcion
  * -- metodoNombre. getIndex, postStore, putEdit
+ * Nombre de ruta
+ * -- 'metodoNombre' => 'nombre.de.ruta'
  */
 Route::controller(
-		'users',
-		'UsersController',
-		array(
-	        'getCreate'   => 'users.create',
-	        'postStore'   => 'users.store',
-	    )
-	);
+			'users',
+			'UsersController',
+			array(
+		        'getCreate'   => 'users.create',
+		        'postStore'   => 'users.store',
+		    )
+		);
+
+Route::controller('session','SessionController');
+

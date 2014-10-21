@@ -2,6 +2,8 @@
 
 class TasksController extends \BaseController {
 
+	protected $layout = 'layouts.master';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +11,8 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$this->layout->title = 'Tasks';
+		$this->layout->content = View::make('tasks.index');
 	}
 
 

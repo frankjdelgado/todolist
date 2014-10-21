@@ -60,8 +60,7 @@ class UsersController extends \BaseController {
 				$user->save();
 				return Redirect::route('tasks.index');
 			} catch (Exception $e) {
-				// return $e->getMessage();
-				return Redirect::route('users.create')->withErrors($e->getMessage());
+				return Redirect::route('users.create')->with('message','Failed to create user. Please, try again.');
 			}			
 		}
 
