@@ -22,7 +22,7 @@ class UsersController extends \BaseController {
 	 */
 	public function getCreate()
 	{
-		//
+		
 		$this->layout->title = 'Sign up';
 		$this->layout->content = View::make('user.create');
 	}
