@@ -4,6 +4,12 @@ class TasksController extends \BaseController {
 
 	protected $layout = 'layouts.master';
 
+	public function __construct()
+    {
+        $this->beforeFilter('auth');
+        $this->beforeFilter('csrf', array('on' => 'post'));
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *

@@ -3,6 +3,14 @@
 class UsersController extends \BaseController {
 
 	protected $layout = 'layouts.master';
+
+	public function __construct()
+    {
+        $this->beforeFilter('auth', array('except' => array('getCreate','postStore')));
+        $this->beforeFilter('csrf', array('on' => 'post'));
+    }
+
+
 	/**
 	 * Display a listing of the resource.
 	 * GET /users
@@ -58,7 +66,7 @@ class UsersController extends \BaseController {
 
 			try {
 				$user->save();
-				return Redirect::route('tasks.index');
+				return Redirect::action('HomeController@showWelcome');
 			} catch (Exception $e) {
 				return Redirect::route('users.create')->with('message','Failed to create user. Please, try again.');
 			}			
