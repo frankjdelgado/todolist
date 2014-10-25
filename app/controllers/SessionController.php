@@ -4,6 +4,12 @@ class SessionController extends \BaseController {
 
 	protected $layout = 'layouts.master';
 
+	public function __construct()
+    {
+        $this->beforeFilter('auth', array('only' => 'getLogout'));
+        $this->beforeFilter('csrf', array('on' => 'post'));
+    }
+
 	public function getLogin()
 	{
 		$this->layout->title = 'Sign in';
