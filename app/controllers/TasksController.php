@@ -4,7 +4,7 @@ class TasksController extends \BaseController {
 
 	protected $layout = 'layouts.master';
 
-	public function __construct()
+	public function __contsruct()
     {
         $this->beforeFilter('auth');
         $this->beforeFilter('csrf', array('on' => 'post'));
@@ -108,11 +108,15 @@ class TasksController extends \BaseController {
 		$task = Task::find($id);
 
 		try {
-			$task->completed = true;
+			if($task->completed){
+				$task->completed = 0;
+			}else{
+				$task->completed = 1;
+			}
 			$task->save();
 			return Redirect::route('tasks.index');
 		} catch (Exception $e) {
-			return Redirect::route('tasks.index')->with('message',$e->getMessage());
+			return Redirect::route('tasks.index')->with('message','Failed to update task. Please, try again.');
 		}
 	}
 

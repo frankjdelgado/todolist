@@ -21,7 +21,10 @@
 					<li class="task-done">
 						<p>{{$task->name}}</p>
 						<span class="task-info">DONE</span>
-						<span class="icon-checkmark"></span>
+						<a href="{{route('tasks.update',$task->id)}}" class="btn-done" data-method="put" rel="nofollow">
+							<span class="icon-checkmark"></span>
+							<span class="icon-clock"></span>
+						</a>
 					</li>
 				@endif
 			@endforeach

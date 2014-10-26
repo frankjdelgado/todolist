@@ -7,21 +7,11 @@
 li.task-done{
 	border-color: #ccc !important;
 	color: #ccc;
-	span.icon-checkmark{
-		position:absolute;
-		bottom:5px;
-		right:0;
-		font-size: 20px;
-		padding:4px;
-		color:$red;
-	}
 	.task-info{
 		color: #ccc;
 	}
 }
-.task-list{
-	// padding:20px 0;
-}
+
 .task-list li{
 
 	position:relative;
