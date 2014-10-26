@@ -32,6 +32,8 @@ class SessionController extends \BaseController {
 			 */
 	        Session::put('username', $user->username);
 
+	        Session::put('user_id', $user->id);
+
 	        /**
 	         * Variable en sesion que dure un solo request
 	         * Session::flash('nombre',$mensaje)

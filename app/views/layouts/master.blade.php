@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_token">
+    <meta name="csrf-token" content="{{ csrf_token() }}">  
     <title>{{ $title or '' }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,300,300italic' rel='stylesheet' type='text/css'>
@@ -23,32 +25,35 @@
     <![endif]-->
   </head>
   <body>
-  @include('shared.header')
-  @include('shared.messages')	
-  <!-- Custom Content -->
-	@yield('content')
+  <div id="container">
+    @include('shared.header')
+    @include('shared.messages')	
+    <!-- Custom Content -->
+  	@yield('content')
 
-  <div class="footer-separator"></div>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 text-right">
-          <ul class="list-inline list-unstyle">
-            <li>
-              <a target="_blank" href="https://github.com/frankjdelgado/todolist">
-              <span>Check our project at</span>
-              Github
-              <span class="icon-uniE61A"></span>
-              </a>
-            </li>
-          </ul>
+    <div class="footer-separator"></div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-right">
+            <ul class="list-inline list-unstyle">
+              <li>
+                <a target="_blank" href="https://github.com/frankjdelgado/todolist">
+                <span>Check our project at</span>
+                Github
+                <span class="icon-uniE61A"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 	<!-- JS Files -->
   <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
   <script src="{{asset('js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('js/rails.js')}}"></script>
   @section('js')
   @show
   </body>

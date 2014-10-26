@@ -104,3 +104,6 @@
 .icon-paypal:before {
 	content: "\e619";
 }
+.icon-checkmark:before {
+	content: "\e61b";
+}

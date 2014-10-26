@@ -38,7 +38,7 @@ class Task extends Eloquent {
 	 */
 	public function scopeCompleted($query)
     {
-        return $query->where('completed','=',1)->orderBy('created_at','DESC');
+        return $query->where('completed','=',1)->orderBy('created_at','ASC');
     }
 
     /**
@@ -49,7 +49,16 @@ class Task extends Eloquent {
 	 */
     public function scopePending($query)
     {
-        return $query->where('completed','=',0)->orderBy('created_at','DESC');
+        return $query->where('completed','=',0)->orderBy('created_at','ASC');
     }
+
+	/**
+	 * Cambiar formato de fechas:
+	 *
+	 */
+    public function simpleDate()
+	{
+		return \Carbon\Carbon::parse($this->created_at)->format('d/m/Y');
+	}
 
 }

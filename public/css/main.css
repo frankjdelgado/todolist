@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -6,6 +11,10 @@ body {
 }
 a:focus {
   outline: none;
+}
+#container {
+  min-height: 100%;
+  position: relative;
 }
 .img-responsive {
   display: inline-block;
@@ -33,9 +42,18 @@ a:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.btn-todo-small {
+  padding: 3px 13px;
+}
 .navbar-todo {
+  margin-bottom: 40px;
   border-bottom-color: #eb5c60;
   border-bottom-width: 2px;
+}
+@media (max-width: 992px) {
+  .navbar-todo {
+    margin-bottom: 20px;
+  }
 }
 .navbar-todo .navbar-brand {
   font-family: 'Indie Flower', cursive;
@@ -76,7 +94,7 @@ a:focus {
   padding: 3px 20px;
 }
 .footer-separator {
-  padding-top: 73px;
+  padding-top: 100px;
 }
 footer {
   position: absolute;
@@ -134,7 +152,7 @@ footer a span.icon-uniE61A {
   font-weight: 500;
   font-size: 13px;
 }
-.form-todo input[type='email'], .form-todo input[type='password'] {
+.form-todo input[type='email'], .form-todo input[type='password'], .form-todo input[type='text'] {
   display: block;
   width: 100%;
   border: 0px;
@@ -146,11 +164,11 @@ footer a span.icon-uniE61A {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.form-todo input[type='email']:focus, .form-todo input[type='password']:focus {
+.form-todo input[type='email']:focus, .form-todo input[type='password']:focus, .form-todo input[type='text']:focus {
   outline: none;
   border-color: #eb5c60;
 }
-.form-todo input[type='email']:focus + .form-icon, .form-todo input[type='password']:focus + .form-icon {
+.form-todo input[type='email']:focus + .form-icon, .form-todo input[type='password']:focus + .form-icon, .form-todo input[type='text']:focus + .form-icon {
   color: #eb5c60;
 }
 .form-todo .form-group {

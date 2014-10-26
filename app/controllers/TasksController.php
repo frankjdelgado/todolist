@@ -17,8 +17,16 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
+		// $user = User::find(Helpers::currentUserID());
+		// $user = Auth::user();
+		// $tasks = Task::where('user_id','=','7')->orderBy('completed','ASC')->orderBy('created_at','ASC')->get();
+		$tasks = Auth::user()->tasks()->orderBy('completed','ASC')->orderBy('created_at','ASC')->get();
+
+		// Log de consultas a la BD
+		// return $queries = DB::getQueryLog();
+		
 		$this->layout->title = 'Tasks';
-		$this->layout->content = View::make('tasks.index');
+		$this->layout->content = View::make('tasks.index')->with('tasks',$tasks);
 	}
 
 
@@ -39,7 +47,24 @@ class TasksController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules =  array('name' => 'required|unique:tasks');
+
+		$validator = Validator::make(Input::all(),$rules);
+
+		if ($validator->fails()) {
+			return Redirect::route('tasks.index')->withErrors($validator)->withInput();
+		}else{
+
+			$task = new Task;
+			$task->name = Input::get('name');
+			$task->user_id = Helpers::currentUserID();
+			try {
+				$task->save();
+				return Redirect::route('tasks.index');
+			} catch (Exception $e) {
+				return Redirect::route('tasks.index')->with('message',$e->getMessage());
+			}			
+		}
 	}
 
 
@@ -52,6 +77,8 @@ class TasksController extends \BaseController {
 	public function show($id)
 	{
 		//
+		return 'show';
+		return Redirect::route('tasks.index');
 	}
 
 
@@ -64,6 +91,8 @@ class TasksController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		// return 'edit';
+		return Redirect::route('tasks.index');
 	}
 
 
@@ -75,7 +104,16 @@ class TasksController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// return 'update';
+		$task = Task::find($id);
+
+		try {
+			$task->completed = true;
+			$task->save();
+			return Redirect::route('tasks.index');
+		} catch (Exception $e) {
+			return Redirect::route('tasks.index')->with('message',$e->getMessage());
+		}
 	}
 
 
@@ -88,6 +126,7 @@ class TasksController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		return Redirect::route('tasks.index');
 	}
 
 

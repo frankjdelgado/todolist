@@ -4,7 +4,11 @@
     <div class="navbar-header">
       <button type="button" class="icon-list navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       </button>
-      {{link_to('/','todo',array('class'=>'navbar-brand text-uppercase'))}}
+      @if(Auth::check())
+        {{link_to('tasks','todo',array('class'=>'navbar-brand text-uppercase'))}}
+      @else
+        {{link_to('/','todo',array('class'=>'navbar-brand text-uppercase'))}}
+      @endif
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

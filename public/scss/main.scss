@@ -1,4 +1,9 @@
 @import 'variables/variables';
+html,body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
 
 body {
 	font-family: $font-body;
@@ -8,6 +13,11 @@ body {
 }
 a:focus{
 	outline:none;
+}
+
+#container {
+   	min-height:100%;
+   	position:relative;
 }
 
 // Helpers
@@ -41,9 +51,15 @@ a:focus{
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-
+.btn-todo-small{
+	padding: 3px 13px;
+}
 // Todo Globals
 .navbar-todo{
+	margin-bottom:40px;
+	@media (max-width: 992px) {
+    	margin-bottom: 20px;
+  	}
 	border-bottom-color: $red;
 	border-bottom-width: 2px;
 	.navbar-brand {
@@ -95,7 +111,7 @@ a:focus{
 }
 
 .footer-separator{
-	padding-top:73px;
+	padding-top:100px;
 }
 footer{
 	position:absolute;
@@ -154,7 +170,7 @@ footer{
 		font-weight: 500;
 		font-size: 13px;
 	}
-	input[type='email'],input[type='password']{
+	input[type='email'],input[type='password'],input[type='text']{
 		display:block;
 		width:100%;
 		border:0px;
