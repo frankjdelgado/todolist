@@ -46,7 +46,4 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |
 */
 
-// SCSS MAGICK!
-SassCompiler::run("public/scss/", "public/css/");
-
 $app->run();

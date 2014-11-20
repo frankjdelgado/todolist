@@ -13,7 +13,7 @@
     <!-- CSS Files -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
     @section('css')
     @show
     

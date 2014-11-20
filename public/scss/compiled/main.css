@@ -1,0 +1,170 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a:focus {
+  outline: none; }
+
+#container {
+  min-height: 100%;
+  position: relative; }
+
+.img-responsive {
+  display: inline-block; }
+
+.text-red {
+  color: #EB5C60; }
+
+.text-dark-red {
+  color: #e8454a; }
+
+.text-grey {
+  color: #58595B; }
+
+.text-dark-grey {
+  color: #999; }
+
+.btn-todo-red {
+  border: 1px solid #EB5C60;
+  border-radius: 0px;
+  background-color: #EB5C60;
+  color: #F0EDEA;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.btn-todo-small {
+  padding: 3px 13px; }
+
+.navbar-todo {
+  margin-bottom: 40px;
+  border-bottom-color: #EB5C60;
+  border-bottom-width: 2px; }
+  @media (max-width: 992px) {
+    .navbar-todo {
+      margin-bottom: 20px; } }
+  .navbar-todo .navbar-brand {
+    font-family: "Indie Flower", cursive;
+    color: #EB5C60;
+    font-size: 35px;
+    padding: 20px 15px;
+    line-height: 35px;
+    height: 70px; }
+    .navbar-todo .navbar-brand:hover {
+      color: #e52f34; }
+  .navbar-todo .navbar-toggle {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 25px;
+    background-color: #EB5C60;
+    color: #F0EDEA;
+    padding: 5px;
+    border-radius: 50%;
+    border-color: #EB5C60; }
+    .navbar-todo .navbar-toggle:hover, .navbar-todo .navbar-toggle:focus {
+      background-color: #e52f34; }
+  .navbar-todo .navbar-nav li a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: #222;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500; }
+    .navbar-todo .navbar-nav li a:hover, .navbar-todo .navbar-nav li a:focus {
+      color: #e52f34; }
+  .navbar-todo .navbar-nav .dropdown-menu li a {
+    padding: 3px 20px; }
+
+.footer-separator {
+  padding-top: 100px; }
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 73px;
+  padding: 20px 0;
+  background-color: #222;
+  font-size: 12px;
+  letter-spacing: 1px; }
+  footer li > * {
+    vertical-align: middle; }
+  footer a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #F0EDEA; }
+    footer a:hover {
+      color: #EB5C60;
+      text-decoration: none; }
+      footer a:hover span {
+        color: #F0EDEA; }
+      footer a:hover span.icon-uniE61A {
+        color: #EB5C60; }
+    footer a span {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      color: #EB5C60; }
+    footer a span.icon-uniE61A {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      color: #F0EDEA;
+      position: relative;
+      top: 4px;
+      margin-left: 5px;
+      font-size: 20px; }
+
+.form-todo label {
+  color: #58595B;
+  font-weight: 500;
+  font-size: 13px; }
+.form-todo input[type='email'], .form-todo input[type='password'], .form-todo input[type='text'] {
+  display: block;
+  width: 100%;
+  border: 0px;
+  border-bottom: 2px solid #58595B;
+  padding: 8px 25px 8px 0px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .form-todo input[type='email']:focus, .form-todo input[type='password']:focus, .form-todo input[type='text']:focus {
+    outline: none;
+    border-color: #EB5C60; }
+    .form-todo input[type='email']:focus + .form-icon, .form-todo input[type='password']:focus + .form-icon, .form-todo input[type='text']:focus + .form-icon {
+      color: #EB5C60; }
+.form-todo .form-group {
+  margin-bottom: 30px;
+  position: relative; }
+  .form-todo .form-group .form-icon {
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    z-index: 2;
+    display: block;
+    font-size: 16px;
+    color: #58595B; }
+@media (max-width: 992px) {
+  .form-todo .btn {
+    display: block;
+    width: 100%; } }
+
+/*# sourceMappingURL=main.css.map */

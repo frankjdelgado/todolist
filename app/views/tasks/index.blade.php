@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-<link href="{{asset('css/tasks.css')}}" rel="stylesheet">
+<link href="{{asset('css/tasks.min.css')}}" rel="stylesheet">
 @stop
 @section('content')
 <div class="container">

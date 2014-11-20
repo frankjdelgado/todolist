@@ -2,6 +2,7 @@
 /bower_components
 /node_modules
 /vendor
+./sass-cache
 composer.phar
 .env.*.php
 .env.php
