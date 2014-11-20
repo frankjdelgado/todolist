@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,300,300italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <!-- CSS Files -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
     @section('css')
@@ -51,9 +51,9 @@
     </footer>
   </div>
 	<!-- JS Files -->
-  <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/rails.js')}}"></script>
+  <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('bower_components/jquery-ujs/src/rails.js')}}"></script>
   @section('js')
   @show
   </body>
