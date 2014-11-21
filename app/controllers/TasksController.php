@@ -105,6 +105,8 @@ class TasksController extends \BaseController {
 	public function update($id)
 	{
 
+		$user_id = Helpers::currentUserID();
+
 		$task = Task::where('user_id','=',$user_id)->where('id','=',$id)->first();
 
 		// Tag as complete/uncomplete if the task exist and belongs to the current user.
@@ -130,6 +132,18 @@ class TasksController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+
+		$user_id = Helpers::currentUserID();
+		
+		$task = Task::where('user_id','=',$user_id)->where('id','=',$id)->first();
+
+		try {
+			$task->delete();
+			return Redirect::route('tasks.index');
+		} catch (Exception $e) {
+			return Redirect::route('tasks.index')->with('message','Failed to update task. Please, try again.');
+		}
+
 		return Redirect::route('tasks.index');
 	}
 

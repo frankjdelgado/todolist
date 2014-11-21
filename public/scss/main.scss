@@ -5,6 +5,28 @@ html,body {
    height:100%;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url('../fonts/IndieFlower.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 body {
 	font-family: $font-body;
 	font-size:14px;
@@ -21,17 +43,16 @@ a{
 }
 
 
-
 #container {
    	min-height:100%;
    	position:relative;
 }
 
 // Helpers
-
 .img-responsive{
 	display:inline-block;
 }
+
 // Colors
 .text-red{
 	color:$red;
@@ -61,6 +82,7 @@ a{
 .btn-todo-small{
 	padding: 3px 13px;
 }
+
 // Todo Globals
 .navbar-todo{
 	margin-bottom:40px;
@@ -120,6 +142,7 @@ a{
 .footer-separator{
 	padding-top:100px;
 }
+
 footer{
 	position:absolute;
 	bottom:0px;
@@ -171,6 +194,7 @@ footer{
 		}
 	}
 }
+
 .form-todo{
 	label{
 		color:$grey;
@@ -215,4 +239,18 @@ footer{
 	    	width:100%;
 	  	}
 	}
+}
+
+.alert-todo{
+	@media (min-width: 992px) {
+		position:fixed;
+		top: 5px;
+		right: 0;
+		left: 0;
+		width: 45%;
+		z-index: 1;
+		margin:0 auto;
+  	}
+	border:0px;
+	border-radius: 0;
 }

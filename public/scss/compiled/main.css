@@ -3,6 +3,22 @@ html, body {
   padding: 0;
   height: 100%; }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Indie Flower"), local("IndieFlower"), url("../fonts/IndieFlower.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -168,5 +184,18 @@ footer {
   .form-todo .btn {
     display: block;
     width: 100%; } }
+
+.alert-todo {
+  border: 0px;
+  border-radius: 0; }
+  @media (min-width: 992px) {
+    .alert-todo {
+      position: fixed;
+      top: 5px;
+      right: 0;
+      left: 0;
+      width: 45%;
+      z-index: 1;
+      margin: 0 auto; } }
 
 /*# sourceMappingURL=main.css.map */

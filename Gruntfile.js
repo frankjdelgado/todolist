@@ -19,6 +19,12 @@ module.exports = function(grunt) {
 				livereload: true,
 			},
 		},
+		templates: {
+			files: ['app/views/**/*.php'],
+			options: {
+				livereload: true,
+			},
+		},
     },
     sass: {
 		dist: {

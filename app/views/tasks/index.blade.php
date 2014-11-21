@@ -5,28 +5,17 @@
 @section('content')
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-offset-2 col-md-6">
+    <div class="col-xs-12 col-md-offset-1 col-md-6">
 		<ul class="list-unstyled task-list">
 			@foreach ($tasks as $task)
-				@if(!$task->completed)
-				    <li>
-						<p>{{$task->name}}</p>
-						<span class="task-info">{{$task->simpleDate()}}</span>
-						<a href="{{route('tasks.update',$task->id)}}" class="btn-done" data-method="put" rel="nofollow">
-							<span class="icon-clock"></span>
-							<span class="icon-checkmark"></span>
-						</a>
-					</li>
-				@else
-					<li class="task-done">
-						<p>{{$task->name}}</p>
-						<span class="task-info">DONE</span>
-						<a href="{{route('tasks.update',$task->id)}}" class="btn-done" data-method="put" rel="nofollow">
-							<span class="icon-checkmark"></span>
-							<span class="icon-clock"></span>
-						</a>
-					</li>
-				@endif
+			    <li>
+					<p>{{$task->name}}</p>
+					<span class="task-info">{{$task->simpleDate()}}</span>
+					<a href="{{route('tasks.update',$task->id)}}" class="btn-done" data-method="delete" rel="nofollow">
+						<span class="icon-clock"></span>
+						<span class="icon-checkmark"></span>
+					</a>
+				</li>
 			@endforeach
 		</ul>
     </div>
