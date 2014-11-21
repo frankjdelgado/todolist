@@ -34,3 +34,5 @@ Route::controller(
 					)
 				);
 
+Route::controller('password','RemindersController');
+

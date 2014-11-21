@@ -11,6 +11,8 @@ body {
 
 a:focus {
   outline: none; }
+a.text-red:hover {
+  color: #e52f34; }
 
 #container {
   min-height: 100%;
