@@ -11,11 +11,6 @@
     <link href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
-    
-    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('bower_components/jquery-ujs/src/rails.js')}}"></script>
-
     @section('css')
     @show
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,7 +47,9 @@
       </footer>
     </div>
 
-   
+    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bower_components/jquery-ujs/src/rails.js')}}"></script>   
     @section('js')
     @show
   </body>
