@@ -1,3 +1,7 @@
+/app/config/database.php
+/app/config/mail.php
+/app/config/remote.php
+/app/config/queue.php
 /bootstrap/compiled.php
 /public/bower_components
 /bower_components
