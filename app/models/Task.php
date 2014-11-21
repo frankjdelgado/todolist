@@ -1,37 +1,28 @@
 <?php
 
-class Task extends Eloquent {
+class Task extends SuperModel {
 
 	protected $fillable = [];
 
-	/**
-	 * Tabla:
-	 * nombre_de_tabla
-	 * --minuscula y plural
-	 * --si no sigue esta convencion, especificar con protected $table = 'nombre_de_tabla';
-	 */
-
 	protected $table = 'tasks';
 
+	protected $rules = array(
+        'name' => 'required|unique:tasks',
+    );
 
-	/**
-	 * Relaciones:
-	 * function nombreRelacion
-	 * belongsTo('NombreModelo');
-	 */	
+
+	/*
+	 ********************
+	 * Relationships    *
+	 ********************
+	 */
 	public function user()
     {
-    	/* Task::find(1).user */
         return $this->belongsTo('User');
     }
 
 	/**
-	 * Scopes:
-	 * function scopeNombre($query)
-	 */
-
-	/**
-	 * Obtener todas las tareas completadas:
+	 * Get all completed tasks:
 	 *
 	 * @var query
 	 * @return tasks 
@@ -42,7 +33,7 @@ class Task extends Eloquent {
     }
 
     /**
-	 * Obtener todas las tareas pendientes:
+	 * Get all pending tasks:
 	 *
 	 * @var query
 	 * @return tasks 
@@ -52,9 +43,11 @@ class Task extends Eloquent {
         return $query->where('completed','=',0)->orderBy('created_at','ASC');
     }
 
-	/**
-	 * Cambiar formato de fechas:
-	 *
+
+	/*
+	 ********************
+	 * Helpers          *
+	 ********************
 	 */
     public function simpleDate()
 	{

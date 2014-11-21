@@ -5,39 +5,25 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends SuperModel implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'users';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
+	// Index Blacklist
 	protected $hidden = array('password', 'remember_token');
 
-
-	/**
-	 * Asignacion masiva:
-	 * -- whitelist de atributos para asignacion masiva. Crear o Actualizar
-	 */	
+	// Store Whitelist
 	protected $fillable = array('password','email');
 
-	/**
-	 * Relaciones:
-	 * -- en plural si de vuelve muchos objetos
-	 * -- en singular si devuelve un solo objeto
-	 */	
+	protected $rules =  array(
+		        	'email' => 'required|email|unique:users',
+		        	'password' => 'required|min:6|confirmed',
+		    	  );
+
 	public function tasks()
     {
-    	/* User::find(1).tasks */
         return $this->hasMany('Task'); 
     }
 

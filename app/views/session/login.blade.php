@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-4 col-md-4">
-      {{ Form::open(array('url' => 'session/login', 'role'=>'form', 'class' => 'form-todo')) }}
+      {{ Form::open(array('route' => 'session.store', 'role'=>'form', 'class' => 'form-todo')) }}
         <div class="form-group">
           {{ Form::label('email', 'email', array('class' => 'text-uppercase')) }}        
           {{ Form::email('email', $value = null, $attributes = array('autofocus')) }}

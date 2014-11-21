@@ -43,23 +43,22 @@ class UsersController extends \BaseController {
 	 */
 	public function postStore()
 	{
-		//
 
-		$rules =  array(
-		        	'email' => 'required|email|unique:users',
-		        	'password' => 'required|min:6|confirmed',
-		    	  );
+		// Data from form
+		$data = Input::all();
+		
+		$user = new User;
 
-		$validator = Validator::make(Input::all(),$rules);
+		if (!$user->validate($data)) {
 
-		if ($validator->fails()) {
-			return Redirect::route('users.create')->withErrors($validator)->withInput();
+			return Redirect::route('users.create')->withErrors($user->errors())->withInput();
 		}else{
 
-			/*Via Mass Asignment
-			$user = new User(Input::all());*/
-
-			$user = new User;
+			/*
+			 * Generate username from email:
+			 * email: example@mai.com
+			 * username: example
+			 */
 			$user->username = current(explode("@", Input::get('email')));
 			$user->email = Input::get('email');
 			$user->password = Hash::make(Input::get('password'));
@@ -71,7 +70,6 @@ class UsersController extends \BaseController {
 				return Redirect::route('users.create')->with('message','Failed to create user. Please, try again.');
 			}			
 		}
-
 	}
 
 	/**
@@ -120,6 +118,11 @@ class UsersController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function missingMethod($parameters = array())
+	{
+	    //
 	}
 
 }

@@ -10,35 +10,29 @@ class SessionController extends \BaseController {
         $this->beforeFilter('csrf', array('on' => 'post'));
     }
 
+    // Show login view
 	public function getLogin()
 	{
 		$this->layout->title = 'Sign in';
 		$this->layout->content = View::make('session.login');
 	}
 
+	// Process login request
 	public function postLogin()
 	{
 
-		$user = array('email' => Input::get('email'), 'password' => Input::get('password'));
+		$user = array(
+					'email' => Input::get('email'), 
+					'password' => Input::get('password')
+				);
 
 		if (Auth::attempt($user)){
 
-			// Obtener usuario actual
+			// Save current user
 			$user = Auth::user();
-
-			/**
-			 * Guardar datos en sesion
-			 * 'nombre', $dato
-			 */
 	        Session::put('username', $user->username);
-
 	        Session::put('user_id', $user->id);
 
-	        /**
-	         * Variable en sesion que dure un solo request
-	         * Session::flash('nombre',$mensaje)
-	         * with('nombre',$mensaje)
-	         */
 		    return Redirect::intended('tasks')->with('message','Welcome!');
 		}else{
 			return Redirect::back()->with('message','Email and/or password invalid.')->withInput();
@@ -50,6 +44,11 @@ class SessionController extends \BaseController {
 		Auth::logout();
 		Session::flush();
 		return Redirect::to('/');
+	}
+
+	public function missingMethod($parameters = array())
+	{
+	    //
 	}
 
 }

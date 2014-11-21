@@ -11,7 +11,7 @@
         <h2>Write it down</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam molestias reprehenderit error ipsum vero. Obcaecati magnam illum quis porro similique eum expedita, voluptates hic cupiditate harum, sed est, ex alias!</p>
         <div class="text-right">
-          <a href="{{route('users.create', $params = null)}}" class="btn btn-lg btn-todo-red text-uppercase">sign me up!</a>
+          <a href="{{route('users.create')}}" class="btn btn-lg btn-todo-red text-uppercase">sign me up!</a>
         </div>
       </div>
     </div>

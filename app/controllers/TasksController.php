@@ -4,9 +4,11 @@ class TasksController extends \BaseController {
 
 	protected $layout = 'layouts.master';
 
-	public function __contsruct()
+	// Filters
+	public function __construct()
     {
-        $this->beforeFilter('auth');
+    	// All routes protected from Guest Users
+        $this->beforeFilter('auth',array());
         $this->beforeFilter('csrf', array('on' => 'post'));
     }
 
@@ -17,13 +19,10 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		// $user = User::find(Helpers::currentUserID());
-		// $user = Auth::user();
-		// $tasks = Task::where('user_id','=','7')->orderBy('completed','ASC')->orderBy('created_at','ASC')->get();
-		$tasks = Auth::user()->tasks()->orderBy('completed','ASC')->orderBy('created_at','ASC')->get();
 
-		// Log de consultas a la BD
-		// return $queries = DB::getQueryLog();
+		// Get current user tasks
+		$user_id = Helpers::currentUserID();
+		$tasks = Task::where('user_id','=',$user_id)->orderBy('completed','ASC')->orderBy('created_at','ASC')->get();
 		
 		$this->layout->title = 'Tasks';
 		$this->layout->content = View::make('tasks.index')->with('tasks',$tasks);
@@ -37,27 +36,32 @@ class TasksController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return Redirect::route('tasks.index');
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Store a newly created task in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		$rules =  array('name' => 'required|unique:tasks');
 
-		$validator = Validator::make(Input::all(),$rules);
+		// Collect data from form
+		$data = Input::all();
 
-		if ($validator->fails()) {
-			return Redirect::route('tasks.index')->withErrors($validator)->withInput();
+		$task = new Task();
+
+		// Validate if data is acceptable!
+		if (!$task ->validate($data)) {
+
+			return Redirect::route('tasks.index')->withErrors($task->errors())->withInput();
+
 		}else{
 
-			$task = new Task;
 			$task->name = Input::get('name');
 			$task->user_id = Helpers::currentUserID();
+
 			try {
 				$task->save();
 				return Redirect::route('tasks.index');
@@ -76,8 +80,6 @@ class TasksController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
-		return 'show';
 		return Redirect::route('tasks.index');
 	}
 
@@ -90,8 +92,6 @@ class TasksController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-		// return 'edit';
 		return Redirect::route('tasks.index');
 	}
 
@@ -104,9 +104,10 @@ class TasksController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		// return 'update';
-		$task = Task::find($id);
 
+		$task = Task::where('user_id','=',$user_id)->where('id','=',$id)->first();
+
+		// Tag as complete/uncomplete if the task exist and belongs to the current user.
 		try {
 			if($task->completed){
 				$task->completed = 0;
@@ -129,7 +130,6 @@ class TasksController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
 		return Redirect::route('tasks.index');
 	}
 
