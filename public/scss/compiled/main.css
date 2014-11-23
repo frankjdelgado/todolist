@@ -8,17 +8,20 @@ html, body {
   src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal; }
+
 @font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Medium-webfont.woff") format("woff");
   font-weight: 500;
   font-style: normal; }
+
 @font-face {
   font-family: 'Indie Flower';
   font-style: normal;
   font-weight: 400;
   src: local("Indie Flower"), local("IndieFlower"), url("../fonts/IndieFlower.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -38,22 +41,22 @@ a.text-red:hover {
   display: inline-block; }
 
 .text-red {
-  color: #EB5C60; }
+  color: #eb5c60; }
 
 .text-dark-red {
   color: #e8454a; }
 
 .text-grey {
-  color: #58595B; }
+  color: #58595b; }
 
 .text-dark-grey {
-  color: #999; }
+  color: #999999; }
 
 .btn-todo-red {
-  border: 1px solid #EB5C60;
+  border: 1px solid #eb5c60;
   border-radius: 0px;
-  background-color: #EB5C60;
-  color: #F0EDEA;
+  background-color: #eb5c60;
+  color: #f0edea;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -65,14 +68,14 @@ a.text-red:hover {
 
 .navbar-todo {
   margin-bottom: 40px;
-  border-bottom-color: #EB5C60;
+  border-bottom-color: #eb5c60;
   border-bottom-width: 2px; }
   @media (max-width: 992px) {
     .navbar-todo {
       margin-bottom: 20px; } }
   .navbar-todo .navbar-brand {
     font-family: "Indie Flower", cursive;
-    color: #EB5C60;
+    color: #eb5c60;
     font-size: 35px;
     padding: 20px 15px;
     line-height: 35px;
@@ -83,17 +86,17 @@ a.text-red:hover {
     margin-top: 16px;
     margin-bottom: 16px;
     font-size: 25px;
-    background-color: #EB5C60;
-    color: #F0EDEA;
+    background-color: #eb5c60;
+    color: #f0edea;
     padding: 5px;
     border-radius: 50%;
-    border-color: #EB5C60; }
+    border-color: #eb5c60; }
     .navbar-todo .navbar-toggle:hover, .navbar-todo .navbar-toggle:focus {
       background-color: #e52f34; }
   .navbar-todo .navbar-nav li a {
     padding-top: 25px;
     padding-bottom: 25px;
-    color: #222;
+    color: #222222;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 500; }
@@ -111,7 +114,7 @@ footer {
   width: 100%;
   height: 73px;
   padding: 20px 0;
-  background-color: #222;
+  background-color: #222222;
   font-size: 12px;
   letter-spacing: 1px; }
   footer li > * {
@@ -122,42 +125,42 @@ footer {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    color: #F0EDEA; }
+    color: #f0edea; }
     footer a:hover {
-      color: #EB5C60;
+      color: #eb5c60;
       text-decoration: none; }
       footer a:hover span {
-        color: #F0EDEA; }
+        color: #f0edea; }
       footer a:hover span.icon-uniE61A {
-        color: #EB5C60; }
+        color: #eb5c60; }
     footer a span {
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       -ms-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
-      color: #EB5C60; }
+      color: #eb5c60; }
     footer a span.icon-uniE61A {
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       -ms-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
-      color: #F0EDEA;
+      color: #f0edea;
       position: relative;
       top: 4px;
       margin-left: 5px;
       font-size: 20px; }
 
 .form-todo label {
-  color: #58595B;
+  color: #58595b;
   font-weight: 500;
   font-size: 13px; }
 .form-todo input[type='email'], .form-todo input[type='password'], .form-todo input[type='text'] {
   display: block;
   width: 100%;
   border: 0px;
-  border-bottom: 2px solid #58595B;
+  border-bottom: 2px solid #58595b;
   padding: 8px 25px 8px 0px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -166,9 +169,9 @@ footer {
   transition: all 0.3s ease; }
   .form-todo input[type='email']:focus, .form-todo input[type='password']:focus, .form-todo input[type='text']:focus {
     outline: none;
-    border-color: #EB5C60; }
+    border-color: #eb5c60; }
     .form-todo input[type='email']:focus + .form-icon, .form-todo input[type='password']:focus + .form-icon, .form-todo input[type='text']:focus + .form-icon {
-      color: #EB5C60; }
+      color: #eb5c60; }
 .form-todo .form-group {
   margin-bottom: 30px;
   position: relative; }
@@ -179,7 +182,7 @@ footer {
     z-index: 2;
     display: block;
     font-size: 16px;
-    color: #58595B; }
+    color: #58595b; }
 @media (max-width: 992px) {
   .form-todo .btn {
     display: block;
@@ -197,5 +200,3 @@ footer {
       width: 45%;
       z-index: 1;
       margin: 0 auto; } }
-
-/*# sourceMappingURL=main.css.map */

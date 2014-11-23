@@ -15,7 +15,7 @@
           {{ Form::password('password', $attributes = array('autofocus')) }}
         </div>
         <div class="text-left">
-          <a href="{{action('RemindersController@getRemind')}}" class="text-red">Forgot password?</a>
+          <a href="{{action('RemindersController@getRemind')}}">Forgot password?</a>
         </div>
         <div class="text-right">
           {{ Form::submit('Submit',$attributes = array('class'=>'btn btn-todo-red')) }}

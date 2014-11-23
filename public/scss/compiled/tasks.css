@@ -11,7 +11,7 @@ li.task-done {
 .task-list li {
   position: relative;
   padding: 5px 50px 5px 15px;
-  border-left: 2px solid #EB5C60;
+  border-left: 2px solid #eb5c60;
   margin-bottom: 20px; }
   .task-list li p {
     margin-bottom: 0px; }
@@ -32,7 +32,7 @@ li.task-done {
       -o-transition: all 0.3s linear;
       transition: all 0.3s linear; }
     .task-list li .btn-done span.icon-checkmark {
-      color: #EB5C60; }
+      color: #eb5c60; }
     .task-list li .btn-done span.icon-clock {
       color: #c9c9c9; }
     .task-list li .btn-done:hover {
@@ -50,4 +50,11 @@ li.task-done {
         -ms-transform: translateX(0px) translateY(-28px);
         transform: translateX(0px) translateY(-28px); }
 
-/*# sourceMappingURL=tasks.css.map */
+@media (max-width: 992px) {
+  #new-task {
+    margin-bottom: 15px; } }
+#new-task .form-group {
+  margin-bottom: 15px; }
+  @media (max-width: 992px) {
+    #new-task .form-group {
+      margin-bottom: 10px; } }
