@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-offset-1 col-md-3 col-xs-12">
-    	{{ Form::open(array('route' => 'tasks.store', 'role'=>'form', 'class' => 'form-todo', 'id' => 'new-task')) }}
+    	{{ Form::open(array('route' => 'tasks.store', 'role'=>'form', 'class' => 'form-todo collapse', 'id' => 'new-task')) }}
         <div class="form-group">
           {{ Form::label('name', 'new task', array('class' => 'text-uppercase')) }}        
           {{ Form::text('name', $value = null, $attributes = array('autofocus','autocomplete'=>'off')) }}

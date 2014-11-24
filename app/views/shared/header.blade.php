@@ -4,6 +4,8 @@
     <div class="navbar-header">
       <button type="button" class="icon-list navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       </button>
+      <button type="button" class="icon-plus navbar-toggle visible-sm visible-xs" data-toggle="collapse" data-target="#new-task">
+      </button>
       @if(Auth::check())
         <a href="{{route('tasks.index')}}" class="navbar-brand text-uppercase">todo</a>
       @else
@@ -12,7 +14,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="hidden-xs hidden-sm" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
           <li class="dropdown">
