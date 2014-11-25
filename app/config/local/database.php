@@ -23,9 +23,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'todolist',
-			'username'  => 'root',
-			'password'  => '123456',
+			'database' => 'todolist',
+			'username' => 'homestead',
+			'password' => 'secret',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
